@@ -412,29 +412,117 @@
       color: var(--gold);
     }
 
-    /* COMMUNITY */
-    .community-box {
-      border: 1px solid var(--border);
-      padding: 3rem;
+    /* PHILOSOPHY */
+    .philosophy-wrap {
       background: var(--cream);
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 3rem;
-      align-items: center;
+      padding: var(--section-gap) 0;
     }
-    .community-symbol {
+    .philosophy-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 6rem;
+    }
+    .philosophy-intro {
+      font-size: 1.1rem;
+      color: var(--ink-light);
+      line-height: 1.9;
+      max-width: 750px;
+      margin-bottom: 4rem;
+    }
+    .philosophy-quote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem;
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.5;
+      border-left: 2px solid var(--gold);
+      padding-left: 2rem;
+      margin-bottom: 4rem;
+      max-width: 700px;
+    }
+    .philosophy-quote cite {
+      display: block;
+      font-style: normal;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
       color: var(--gold);
+      margin-top: 1rem;
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+    .philosophy-card {
+      border: 1px solid var(--border);
+      background: var(--warm-white);
+      padding: 2.5rem 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .philosophy-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+    .philosophy-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
       line-height: 1;
     }
-    .community-org {
+    .philosophy-card-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem;
       font-weight: 400;
       color: var(--ink);
+      margin-bottom: 0.8rem;
+    }
+    .philosophy-card-desc {
+      font-size: 0.92rem;
+      color: var(--ink-light);
+      line-height: 1.8;
+    }
+    .philosophy-footer {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .philosophy-badge {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+    .philosophy-footer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--ink);
       margin-bottom: 0.3rem;
     }
+    .philosophy-footer-role {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .philosophy-footer-desc {
+      font-size: 0.92rem;
+      color: var(--ink-light);
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
     .community-role {
       font-size: 0.8rem;
       letter-spacing: 0.12em;
@@ -627,6 +715,9 @@
       .lang-grid { grid-template-columns: 1fr; }
       .experience-inner, .skills-inner { padding: 0 2rem; }
       .community-box { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+      .philosophy-inner { padding: 0 2rem; }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .philosophy-footer { grid-template-columns: 1fr; text-align: center; justify-items: center; }
       .photography-inner { padding: 0 2rem; }
       .photo-grid { grid-template-columns: 1fr 1fr; }
       .photo-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
@@ -644,6 +735,7 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#photography">Photography</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -895,19 +987,49 @@
     <img id="lightbox-img" src="" alt="">
   </div>
 
-  <!-- COMMUNITY -->
-  <section id="community">
-    <div class="section-label">Values &amp; Community</div>
-    <h2 class="section-title">Beyond the Work</h2>
-    <div class="community-box">
-      <div class="community-symbol">☸</div>
-      <div>
-        <div class="community-org">Triratna Buddhist Order</div>
-        <div class="community-role">GfR Mitra · Jan 2023 — Present</div>
-        <div class="community-desc">Active member and volunteer in the Triratna Buddhist community — serving as Centre Manager, maintaining a regular meditation and study practice, participating in retreats, and supporting Sangha activities. A commitment to clarity, compassion, and continual growth that informs every aspect of my professional and personal life.</div>
+  <!-- PHILOSOPHY -->
+  <div class="philosophy-wrap" id="philosophy">
+    <div class="philosophy-inner">
+      <div class="section-label">Inner Foundation</div>
+      <h2 class="section-title">What Drives Me</h2>
+
+      <p class="philosophy-intro">The way I lead, solve problems, and connect with people is shaped by something deeper than experience alone. A consistent practice of meditation, yoga, and mindful living gives me the clarity and calm that I bring to every challenge — professional or personal.</p>
+
+      <blockquote class="philosophy-quote">
+        "The mind is everything. What you think, you become."
+        <cite>Dhammapada</cite>
+      </blockquote>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <div class="philosophy-icon">🧘‍♀️</div>
+          <div class="philosophy-card-title">Meditation</div>
+          <div class="philosophy-card-desc">A daily practice that sharpens focus, builds emotional resilience, and brings a steady calm to high-pressure situations. What begins on the cushion carries into every meeting, every decision, every conversation.</div>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="philosophy-icon">🌿</div>
+          <div class="philosophy-card-title">Yoga</div>
+          <div class="philosophy-card-desc">More than movement — a discipline of breath, awareness, and presence. Yoga teaches me to stay grounded when things move fast, and to approach challenges with both strength and flexibility.</div>
+        </div>
+
+        <div class="philosophy-card">
+          <div class="philosophy-icon">☀️</div>
+          <div class="philosophy-card-title">Mindful Leadership</div>
+          <div class="philosophy-card-desc">Listening before speaking. Responding instead of reacting. Leading with compassion without losing clarity. These aren't just ideals — they're daily practice, shaped by years of inner work and self-inquiry.</div>
+        </div>
+      </div>
+
+      <div class="philosophy-footer">
+        <div class="philosophy-badge">☸</div>
+        <div>
+          <div class="philosophy-footer-title">Triratna Buddhist Community</div>
+          <div class="philosophy-footer-role">GfR Mitra · since January 2023</div>
+          <div class="philosophy-footer-desc">Active member and volunteer — serving as Centre Manager, maintaining a regular meditation and study practice, participating in retreats, and supporting community activities. A commitment to clarity, compassion, and continual growth that informs every aspect of my life.</div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- CONTACT -->
   <div class="contact-wrap" id="contact">
