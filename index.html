@@ -503,6 +503,117 @@
     .hero-cta { animation: fadeUp 0.6s 0.4s ease both; }
     .hero-photo-wrap { animation: fadeUp 0.8s 0.2s ease both; }
 
+    /* PHOTOGRAPHY */
+    .photography-wrap {
+      background: var(--ink);
+      padding: var(--section-gap) 0;
+    }
+    .photography-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 4rem;
+    }
+    .photography-inner .section-title {
+      color: var(--warm-white);
+    }
+    .photography-intro {
+      font-size: 1.05rem;
+      color: var(--ink-faint);
+      line-height: 1.9;
+      max-width: 700px;
+      margin-bottom: 3rem;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .photo-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    .photo-item.tall {
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.4s ease;
+      filter: grayscale(20%);
+    }
+    .photo-item:hover img {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+    }
+    .photo-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.5) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .photo-item:hover::after {
+      opacity: 1;
+    }
+    .photo-caption {
+      position: absolute;
+      bottom: 1rem;
+      left: 1.2rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm-white);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 2;
+    }
+    .photo-item:hover .photo-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 2px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: var(--warm-white);
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 1rem 2rem; }
@@ -516,6 +627,9 @@
       .lang-grid { grid-template-columns: 1fr; }
       .experience-inner, .skills-inner { padding: 0 2rem; }
       .community-box { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+      .photography-inner { padding: 0 2rem; }
+      .photo-grid { grid-template-columns: 1fr 1fr; }
+      .photo-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
     }
   </style>
 </head>
@@ -529,6 +643,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#photography">Photography</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -715,6 +830,71 @@
     </div>
   </div>
 
+  <!-- PHOTOGRAPHY -->
+  <div class="photography-wrap" id="photography">
+    <div class="photography-inner">
+      <div class="section-label" style="color:var(--gold-light)">Creative Eye</div>
+      <h2 class="section-title">Photography</h2>
+      <p class="photography-intro">For over a decade, photography was my craft and my livelihood — capturing light, moments, and the quiet beauty of Mediterranean life. These images are from my time in Santorini, where I specialised in hospitality, lifestyle, and wedding photography.</p>
+      <div class="photo-grid">
+        <div class="photo-item tall" onclick="openLightbox(this)">
+          <img src="images/IMG_3518.jpg" alt="Silhouette at sunset over the Aegean Sea" loading="lazy">
+          <span class="photo-caption">Golden Hour</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_3825.jpg" alt="Classical statue overlooking Santorini caldera" loading="lazy">
+          <span class="photo-caption">Caldera View</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_3834.jpg" alt="Cruise ship framed through a window" loading="lazy">
+          <span class="photo-caption">Framed</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_3836.jpg" alt="Old building with blue doors in Greece" loading="lazy">
+          <span class="photo-caption">Blue Doors</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_3805.jpg" alt="Pottery and succulents with caldera panorama" loading="lazy">
+          <span class="photo-caption">Santorini Terrace</span>
+        </div>
+        <div class="photo-item tall" onclick="openLightbox(this)">
+          <img src="images/IMG_2803.jpg" alt="Portrait with a beagle in Santorini" loading="lazy">
+          <span class="photo-caption">Companion</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_3234.jpg" alt="Elegant table setup with ocean view" loading="lazy">
+          <span class="photo-caption">Hospitality</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_2295.jpg" alt="Succulents and donkey statue with sea view" loading="lazy">
+          <span class="photo-caption">Island Details</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_3892.jpg" alt="Church silhouette at sunset" loading="lazy">
+          <span class="photo-caption">Dusk Chapel</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_3995.jpg" alt="Wedding figurines at sunset" loading="lazy">
+          <span class="photo-caption">Wedding Details</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_3163.jpg" alt="Beagle puppy portrait" loading="lazy">
+          <span class="photo-caption">Island Dog</span>
+        </div>
+        <div class="photo-item" onclick="openLightbox(this)">
+          <img src="images/IMG_3620.jpg" alt="Rooftop jacuzzi at sunset with candles" loading="lazy">
+          <span class="photo-caption">Evening Retreat</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
   <!-- COMMUNITY -->
   <section id="community">
     <div class="section-label">Values &amp; Community</div>
@@ -735,7 +915,7 @@
       <div class="section-label">Get in Touch</div>
       <h2 class="section-title">Let's Connect</h2>
       <p>Whether you're looking to collaborate, hire, or simply connect — I'd love to hear from you.</p>
-      <a class="contact-link" href="https://www.linkedin.com/in/alexandra-hinkel" target="_blank">Connect on LinkedIn</a>
+      <a class="contact-link" href="https://www.linkedin.com/in/alexandra-hinkel/" target="_blank">Connect on LinkedIn</a>
     </div>
   </div>
 
@@ -743,6 +923,22 @@
   <footer>
     &copy; 2026 Alexandra Hinkel · Mġarr, Malta
   </footer>
+
+  <script>
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
