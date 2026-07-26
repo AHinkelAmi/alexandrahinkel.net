@@ -376,6 +376,48 @@
       margin-top: 0.6rem;
     }
 
+    /* PROJECTS */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .project-item {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-item:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .project-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.9rem;
+    }
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+      margin-bottom: 1.4rem;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .project-tag {
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(184,150,90,0.35);
+      padding: 0.3rem 0.7rem;
+    }
+
     /* SKILLS */
     .skills-wrap {
       background: var(--ink);
@@ -737,6 +779,7 @@
       .cert-grid { grid-template-columns: 1fr 1fr; }
       .lang-grid { grid-template-columns: 1fr; }
       .experience-inner, .skills-inner { padding: 0 2rem; }
+      .project-grid { grid-template-columns: 1fr; }
       .community-box { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
       .philosophy-inner { padding: 0 2rem; }
       .philosophy-grid { grid-template-columns: 1fr; }
@@ -755,6 +798,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#photography">Photography</a></li>
@@ -787,7 +831,7 @@
     <div class="about-grid">
       <div class="about-text">
         <p>I'm a multilingual IT and customer service professional based in Malta, with a background that spans technology support, financial services, and over a decade in photography and hospitality.</p>
-        <p>I bring a calm, solution-focused approach to complex technical problems and thrive in environments where people and technology intersect. Currently, I lead the Service Desk team at TOPPAN Security, ensuring smooth IT operations in a security-critical environment.</p>
+        <p>I bring a calm, solution-focused approach to complex technical problems and thrive in environments where people and technology intersect. Currently, I lead the Service Desk team at TOPPAN Security, where I optimize IT operations in a security-critical environment through process automation, clear metrics, and modern ITSM tooling.</p>
         <p>My path has been anything but linear — and that's exactly what makes me effective. I've led restaurant teams, managed client relationships for commercial photography, supported thousands of customers across telecoms, banking, and gaming, and now I lead a technical team in secure identity and payment solutions. Every chapter added a layer of understanding that I bring to my work every day.</p>
       </div>
       <div class="about-stats">
@@ -885,6 +929,41 @@
     </div>
   </div>
 
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">Hands-On</div>
+    <h2 class="section-title">Projects &amp; Automation Highlights</h2>
+    <div class="project-grid">
+      <div class="project-item">
+        <div class="project-title">Custom ITSM &amp; SLA Reporting Engine</div>
+        <div class="project-desc">Designed and built an internal incident management tool in Python that processes raw data exports, automates validation, and generates SLA/RCA reports — architected with a keyless, privacy-by-design approach (zero external API calls).</div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Privacy-by-Design</span>
+          <span class="project-tag">SLA/RCA Reporting</span>
+        </div>
+      </div>
+      <div class="project-item">
+        <div class="project-title">Automated File Classification Tool</div>
+        <div class="project-desc">Developed a desktop application (Python/Tkinter) for automated multi-department file organization using custom keyword matching; packaged and deployed via CI/CD pipelines in Azure DevOps.</div>
+        <div class="project-tags">
+          <span class="project-tag">Python / Tkinter</span>
+          <span class="project-tag">CI/CD</span>
+          <span class="project-tag">Azure DevOps</span>
+        </div>
+      </div>
+      <div class="project-item">
+        <div class="project-title">AI Security &amp; Governance Digest</div>
+        <div class="project-desc">Built an automated intelligence tool aggregating RSS feeds from cybersecurity and AI governance bodies, utilizing the Claude LLM API to automatically compile PDF briefings for decision-makers.</div>
+        <div class="project-tags">
+          <span class="project-tag">LLM / API Integration</span>
+          <span class="project-tag">Automation</span>
+          <span class="project-tag">Security Governance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="section-label">Credentials</div>
@@ -940,7 +1019,8 @@
         <span class="skill-tag">SLA Reporting</span>
         <span class="skill-tag">Root Cause Analysis (RCA)</span>
         <span class="skill-tag">Process Automation</span>
-        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Python Automation</span>
+        <span class="skill-tag">Privacy-by-Design</span>
         <span class="skill-tag">LLM/API Integration</span>
         <span class="skill-tag">CI/CD (Azure DevOps)</span>
         <span class="skill-tag">Security Risk Assessment</span>
