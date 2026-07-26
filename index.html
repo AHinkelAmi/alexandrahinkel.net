@@ -321,6 +321,26 @@
       line-height: 1.75;
       max-width: 65ch;
     }
+    .timeline-list {
+      list-style: none;
+      max-width: 65ch;
+      margin-top: 0.6rem;
+    }
+    .timeline-list li {
+      position: relative;
+      font-size: 0.92rem;
+      color: var(--ink-light);
+      line-height: 1.75;
+      padding-left: 1.1rem;
+    }
+    .timeline-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.75rem;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
 
     /* CERTIFICATIONS */
     .cert-grid {
@@ -780,7 +800,7 @@
           <div class="stat-label">Languages</div>
         </div>
         <div class="stat">
-          <div class="stat-number">15+</div>
+          <div class="stat-number">20+</div>
           <div class="stat-label">Certifications</div>
         </div>
         <div class="stat">
@@ -803,6 +823,13 @@
           <div class="timeline-role">Service Desk Team Lead</div>
           <div class="timeline-company">TOPPAN Security · Malta, On-site</div>
           <div class="timeline-desc">Leading the Service Desk team, overseeing IT support operations in a secure identity and payment solutions environment. Ensuring high availability, team performance, and alignment with ITIL best practices.</div>
+          <ul class="timeline-list">
+            <li>Produce recurring incident and service-level reports for international customer sites, including SLA compliance/breach analysis, root cause analysis (RCA), problem and change tracking, and incident trend statistics.</li>
+            <li>Lead internal stakeholder meetings and customer meetings on incident status and service quality.</li>
+            <li>Designed and built a custom ITSM incident management and reporting tool that ingests raw incident export data, automates data validation, and generates consolidated SLA/RCA/trend reports — built with a keyless, privacy-by-design architecture (no external API calls).</li>
+            <li>Built a Python desktop application (Tkinter GUI) for automated file classification across departments, using configurable keyword-matching logic and shareable category configurations; packaged via CI/CD (Azure DevOps).</li>
+            <li>Built and automated a weekly AI intelligence digest tool aggregating RSS feeds from leading AI research labs, trade press, and regulatory/governance bodies, using the Claude LLM API to generate automated summaries compiled into a PDF report.</li>
+          </ul>
         </div>
 
         <div class="timeline-item">
@@ -863,6 +890,8 @@
     <div class="section-label">Credentials</div>
     <h2 class="section-title">Licenses &amp; Certifications</h2>
     <div class="cert-grid">
+      <div class="cert-item"><div class="cert-issuer">PeopleCert</div><div class="cert-name">ITIL Foundation (Version 5)</div><div class="cert-date">Jul 2026</div></div>
+      <div class="cert-item"><div class="cert-issuer">LinkedIn</div><div class="cert-name">(ISC)² Certified in Cybersecurity (CC): Cert Prep</div><div class="cert-date">Jul 2026</div></div>
       <div class="cert-item"><div class="cert-issuer">Tech Diplomacy Academy</div><div class="cert-name">Transformational Leadership for Tech Diplomacy</div><div class="cert-date">Feb 2026</div></div>
       <div class="cert-item"><div class="cert-issuer">IBM</div><div class="cert-name">Agile Operations Fundamentals</div><div class="cert-date">Dec 2025</div></div>
       <div class="cert-item"><div class="cert-issuer">HubSpot Academy</div><div class="cert-name">Service Hub Software</div><div class="cert-date">Jan 2026</div></div>
@@ -908,6 +937,13 @@
         <span class="skill-tag">De-escalation</span>
         <span class="skill-tag">Mentoring &amp; Coaching</span>
         <span class="skill-tag">Customer Success</span>
+        <span class="skill-tag">SLA Reporting</span>
+        <span class="skill-tag">Root Cause Analysis (RCA)</span>
+        <span class="skill-tag">Process Automation</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">LLM/API Integration</span>
+        <span class="skill-tag">CI/CD (Azure DevOps)</span>
+        <span class="skill-tag">Security Risk Assessment</span>
       </div>
 
       <div style="margin-top:4rem;">
